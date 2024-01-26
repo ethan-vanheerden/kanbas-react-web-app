@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Edit Profile</title>
-  </head>
+
+<head>
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="stylesheet" href="../../../Navigation/index.css" />
+  <link rel="stylesheet" href="../../../../libs/font-awesome/css/font-awesome.min.css" />
+</head>
+
 <body>
   <table>
     <tbody>
       <tr valign="top">
         <td>
-          <ul>
+          <ul class="wd-kanbas-navigation">
             <li>
-              <a href="../screen.html">Account</a>
+              <a href="http://northeastern.edu">N</a>
+            </li>
+            <li class="wd-active">
+              <a href="../screen.html">
+                <i class="fa fa-user"></i>Account</a>
             </li>
             <li>
-              <a href="#">Dashboard</a>
+              <a href="../../../Dashboard/screen.html">
+                <i class="fa fa-tachometer"></i>Dashboard</a>
             </li>
-            <li>
-              <a href="../../../Courses/Home/screen.html">Courses</a>
+            <li><a href="../../../Courses/Home/screen.html">
+                <i class="fa fa-book"></i>Courses</a>
             </li>
-            <li>
-              <a href="#">Calendar</a>
+            <li><a href="#">
+                <i class="fa fa-calendar"></i>Calendar</a>
             </li>
-            <li><a href="#">Inbox</a></li>
-            <li>
-              <a href="#">History</a>
+            <li><a href="#">
+                <i class="fa fa-inbox"></i><br />Inbox</a>
             </li>
-            <li>
-              <a href="#">Studio</a>
+            <li><a href="#">
+                <i class="fa fa-clock-o"></i>History</a>
             </li>
-            <li>
-              <a href="#">Commons</a>
+            <li><a href="#">
+                <i class="fa fa-desktop"></i>Studio</a>
             </li>
-            <li>
-              <a href="#">Help</a>
+            <li><a href="#">
+                <i class="fa fa-arrow-circle-right"></i>Commons</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-question-circle-o"></i><br />Help</a>
             </li>
           </ul>
         </td>
@@ -70,67 +82,67 @@
         </td>
         <td>
           <h2>Ethan van Heerden</h2>
-  <form>
-    <label for="name-entry">Name:*</label>
-    <input id="name-entry" value="Ethan van Heerden" />
+          <form>
+            <label for="name-entry">Name:*</label>
+            <input id="name-entry" value="Ethan van Heerden" />
 
-    <label for="pronouns-entry">Pronouns:</label>
-    <select id="pronouns-entry">
-      <option value="NONE">None</option>
-      <option selected value="HE_HIM">he/him</option>
-      <option value="SHE_HER">she/her</option>
-      <option value="THEY_THEM">they/them</option>
-    </select><br /><br />
+            <label for="pronouns-entry">Pronouns:</label>
+            <select id="pronouns-entry">
+              <option value="NONE">None</option>
+              <option selected value="HE_HIM">he/him</option>
+              <option value="SHE_HER">she/her</option>
+              <option value="THEY_THEM">they/them</option>
+            </select><br /><br />
 
-    <label for="title-entry">Title:</label>
-    <input id="title-entry" value="Student" />
+            <label for="title-entry">Title:</label>
+            <input id="title-entry" value="Student" />
 
-    <h3>Contact</h3>
-    No registered services, you can add some on the <a href="#">settings</a> page.
+            <h3>Contact</h3>
+            No registered services, you can add some on the <a href="#">settings</a> page.
 
-    <h3>Biography</h3>
-    Student at Northeastern University.<br />
-    <textarea cols="50" rows="5">Student at Northeastern University.</textarea>
+            <h3>Biography</h3>
+            Student at Northeastern University.<br />
+            <textarea cols="50" rows="5">Student at Northeastern University.</textarea>
 
-    <h3>Links</h3>
-    <ul>
-      <li>
-        <a href="https://www.youtube.com">YouTube</a>
-      </li>
-    </ul>
+            <h3>Links</h3>
+            <ul>
+              <li>
+                <a href="https://www.youtube.com">YouTube</a>
+              </li>
+            </ul>
 
-    <table border="0">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th></th>
-          <th>URL</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr align="center">
-          <td>
-            <input type="text" value="Youtube">
-          </td>
-          <td>
-            →
-          </td>
-          <td>
-            <input type="text" value="https://www.youtube.com">
-          </td>
-          <td>
-            <a href="#">Remove</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-  <button type="button">Add another link</button><br />
-  <button type="button">Cancel</button>
-  <a href="../screen.html"><button type="button">Save Profile</button></a><br />
-  <button type="button">Edit Profile</button>
-  <a href="../screen.html"><button type="button">Cancel Editing</button></a>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th></th>
+                  <th>URL</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr align="center">
+                  <td>
+                    <input type="text" value="Youtube">
+                  </td>
+                  <td>
+                    →
+                  </td>
+                  <td>
+                    <input type="text" value="https://www.youtube.com">
+                  </td>
+                  <td>
+                    <a href="#">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+          <button type="button">Add another link</button><br />
+          <button type="button">Cancel</button>
+          <a href="../screen.html"><button type="button">Save Profile</button></a><br />
+          <button type="button">Edit Profile</button>
+          <a href="../screen.html"><button type="button">Cancel Editing</button></a>
         </td>
       </tr>
     </tbody>
