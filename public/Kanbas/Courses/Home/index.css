@@ -10,23 +10,49 @@
   margin: 5px;
 }
 
-.wd-modules > li {
+.wd-modules>li {
   background-color: lightgray;
   border: 1px solid gray !important;
-  border-left: none !important;
 }
 
-.wd-modules > li > div {
+.wd-modules>li>div {
   padding: 6px;
-  border-left: 1px solid gray !important;
+  border-left: 2px solid gray !important;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
-.wd-modules > li > ul > li {
+.wd-modules>li>ul>li {
   padding: 5px;
   border-top: 1px solid gray !important;
+  border-bottom: 1px solid gray !important;
+  border-right: 1px solid gray !important;
   border-left: 2px solid green;
+  font-weight: bold;
 }
 
-.wd-modules > li {
+.wd-modules>li>ul>li>ul>li {
+  padding: 5px;
+  border: 1px solid gray !important;
+  text-indent: 30px;
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.wd-modules>li>ul>li>ul>li a{
+  text-indent: -30px;
+  text-decoration: none;
+  color: red;
+}
+
+.wd-modules>li>ul>li>ul>li a:hover{
+  text-decoration: underline;
+}
+
+.wd-modules>li>ul>li>ul>li a i{
+  color: gray;
+}
+
+.wd-modules>li {
   margin-bottom: 20px;
 }
