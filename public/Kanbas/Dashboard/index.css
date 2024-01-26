@@ -1,0 +1,18 @@
+.wd-kanbas-course {
+  width: 270px;
+}
+
+.wd-kanbas-course .card {
+  height: 300px;
+}
+
+.wd-kanbas-course .card-body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
+
+.wd-kanbas-course a {
+  text-decoration: none;
+}
