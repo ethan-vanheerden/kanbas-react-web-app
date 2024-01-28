@@ -34,25 +34,192 @@
 .wd-modules>li>ul>li>ul>li {
   padding: 5px;
   border: 1px solid gray !important;
-  text-indent: 30px;
+  padding-left: 30px;
   margin-top: 8px;
   font-weight: normal;
 }
 
-.wd-modules>li>ul>li>ul>li a{
-  text-indent: -30px;
+.wd-modules>li>ul>li>ul>li i {
+  margin-left: 6px;
+}
+
+.wd-modules>li>ul>li>ul>li a {
   text-decoration: none;
   color: red;
 }
 
-.wd-modules>li>ul>li>ul>li a:hover{
+.wd-modules>li>ul>li>ul>li a:hover {
   text-decoration: underline;
 }
 
-.wd-modules>li>ul>li>ul>li a i{
+.wd-modules>li>ul>li>ul>li a i {
   color: gray;
 }
 
 .wd-modules>li {
   margin-bottom: 20px;
+}
+
+.wd-align-right {
+  margin-left: auto;
+}
+
+.wd-course-button,
+.wd-course-button-red,
+.wd-course-button-publish,
+.wd-course-button-unpublish {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  height: 30px;
+  border-style: none;
+}
+
+.wd-course-button {
+  background-color: rgb(233, 233, 233);
+}
+
+.wd-course-button-red {
+  background-color: red;
+  color: white;
+}
+
+.wd-course-button-unpublish,
+.wd-course-button-publish {
+  display: flex-inline;
+  width: 110px;
+}
+
+.wd-course-button-unpublish i,
+.wd-course-button-publish i {
+  font-size: small;
+  margin-right: 5px;
+}
+
+.wd-course-button-publish {
+  background-color: lightgreen;
+  color: white;
+}
+
+.wd-course-button-red i {
+  background-color: red;
+  color: white;
+  font-size: small;
+}
+
+.wd-course-select {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  height: 30px;
+  background-color: rgb(233, 233, 233);
+  position: relative;
+  bottom: 2px;
+}
+
+.wd-course-status {
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.wd-course-status>h5 {
+  font-weight: bold;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-course-status>h5>div {
+  font-size: small;
+  position: relative;
+  top: 4px;
+}
+
+.wd-course-status>h5>div>a {
+  text-decoration: none;
+  color: red;
+}
+
+.wd-course-status>h5>div>a>i {
+  color: gray;
+}
+
+.wd-course-status>div {
+  margin-top: 5px;
+}
+
+.wd-course-status>div>button {
+  margin: 1px;
+  width: 220px;
+  height: 32px;
+  text-align: left;
+}
+
+.wd-course-status>div>button>i {
+  margin-right: 1px;
+  font-size: small;
+}
+
+.wd-course-status>hr {
+  margin-top: 0px;
+}
+
+.wd-todo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-todo a {
+  text-decoration: none;
+}
+
+.wd-todo h6 {
+  color: red;
+  font-weight: bold;
+}
+
+.wd-todo i {
+  color: red;
+}
+
+.wd-todo-subtitle {
+  color: gray;
+  text-indent: 40px;
+  font-size: smaller;
+  margin-top: 0px;
+  position: relative;
+  bottom: 10px;
+}
+
+.wd-coming-up {
+  position: relative;
+  right: 20px;
+}
+
+.wd-coming-up ul {
+  list-style-type: none;
+}
+
+.wd-coming-up ul>li>a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.wd-coming-up ul>li>a i {
+  color: gray;
+  margin-right: 8px;
+}
+
+.wd-coming-up ul>li>a>div {
+  color: gray;
+  font-size: small;
+  margin-left: 30px;
+  font-weight: normal;
 }
