@@ -13,6 +13,7 @@
 .wd-modules>li {
   background-color: lightgray;
   border: 1px solid gray !important;
+  min-width: 400px;
 }
 
 .wd-modules>li>div {
@@ -300,7 +301,7 @@
   font-size: x-large;
 }
 
-.wd-collapsed-kanbas-nav>div>span>a>i{
+.wd-collapsed-kanbas-nav>div>span>a>i {
   color: gray;
 }
 
@@ -311,7 +312,8 @@
 .wd-collapsed-kanbas-nav>div>ul>li {
   margin-bottom: 16px;
   display: flex;
-  justify-content: space-between;;
+  justify-content: space-between;
+  ;
 }
 
 .wd-collapsed-kanbas-nav>div>ul>li a {
