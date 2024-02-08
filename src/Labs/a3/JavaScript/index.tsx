@@ -1,6 +1,14 @@
+import React from "react";
+import WorkingWithArrays from "./arrays/WorkingWithArrays";
 import IfElse from "./conditionals/IfElse";
 import TernaryOperator from "./conditionals/TernaryOperator";
 import WorkingWithFunctions from "./functions/WorkingWithFunctions";
+import Deconstructing from "./json/Deconstructing";
+import FunctionDestructing from "./json/FunctionDestructing";
+import House from "./json/House";
+import JsonStringify from "./json/JsonStringify";
+import Spreading from "./json/Spreading";
+import TemplateLiterals from "./string/TemplateLiterals";
 import BooleanVariables from "./variables/BooleanVariables";
 import VariablesAndConstants from "./variables/VariablesAndConstants";
 import VariableTypes from "./variables/VariableTypes";
@@ -16,6 +24,13 @@ function JavaScript() {
       <IfElse />
       <TernaryOperator />
       <WorkingWithFunctions />
+      <WorkingWithArrays />
+      <JsonStringify />
+      <TemplateLiterals />
+      <House />
+      <Spreading />
+      <Deconstructing />
+      <FunctionDestructing />
     </div>
   );
 }
