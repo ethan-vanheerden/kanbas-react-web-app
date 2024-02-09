@@ -9,8 +9,6 @@ body * {
 
 .wd-kanbas-nav-offset {
   position: relative;
-  /* left: 80px; */
-  /* width: calc(100vw - 80px); */
   width: 80px;
 }
 
@@ -48,4 +46,45 @@ body * {
 
 .wd-bold {
   font-weight: bold;
+}
+
+.wd-collapsed-navbar {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: black;
+  height: 70px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  margin-bottom: 16px;
+}
+
+.wd-nav-title {
+  position: relative;
+  bottom: 12px;
+}
+
+.wd-collapsed-navbar>button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.wd-kanbas-slide-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+.wd-kanbas-slide-closed {
+  transform: translateX(-100%);
 }

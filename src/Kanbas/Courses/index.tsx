@@ -8,11 +8,13 @@ import {
   useLocation,
 } from 'react-router-dom'
 import { HiMiniBars3 } from 'react-icons/hi2'
+import { FaChevronDown } from 'react-icons/fa'
 import CourseNavigation, { courseLinks } from './Navigation'
 import '../styles.css'
 import './index.css'
 import Modules from './Modules'
 import Home from './Home'
+import { useState } from 'react'
 
 function Courses() {
   const { courseId } = useParams()
@@ -24,10 +26,28 @@ function Courses() {
   }
   const breadcrumb = getBreadcrumb()
 
+  const [collapsedKanbasNavOpen, setCollapsedKanbasNavOpen] = useState(false)
+  const handleToggleCollapsedKanbasNav = () => {
+    setCollapsedKanbasNavOpen((prevState) => !prevState)
+  }
+
+  const [collapsedCourseNavOpen, setCollapsedCourseNavOpen] = useState(false)
+  const handleToggleCollapsedCourseNav = () => {
+    setCollapsedCourseNavOpen((prevState) => !prevState)
+  }
+
   const course = courses.find((course) => course._id === courseId)
   return (
     <div>
-      <div className="ms-4">
+      <div
+        className={`wd-kanbas-slide-nav ${
+          collapsedKanbasNavOpen ? '' : 'wd-kanbas-slide-closed'
+        }`}
+      >
+        HELLO
+      </div>
+
+      <div className="ms-4 d-none d-md-block">
         <div className="wd-course-title wd-fg-red">
           <HiMiniBars3 className="me-3" />
           <ul className="breadcrumb">
@@ -47,11 +67,40 @@ function Courses() {
         </div>
         <hr />
       </div>
-      <div className="d-flex">
+      <div className="d-md-none">
+        <div className="wd-collapsed-navbar">
+          <button
+            className="icon-button"
+            onClick={handleToggleCollapsedKanbasNav}
+          >
+            <HiMiniBars3 />
+          </button>
+
+          <div className="wd-nav-title text-center">
+            {course?.name}
+            <br />
+            {breadcrumb}
+          </div>
+          <button
+            className="icon-button"
+            onClick={handleToggleCollapsedCourseNav}
+          >
+            <FaChevronDown />
+          </button>
+        </div>
+      </div>
+      <div
+        className={`wd-course-slide-nav ${
+          collapsedCourseNavOpen ? '' : 'wd-course-slide-closed'
+        }`}
+      >
+        Collapsed Course Nav
+      </div>
+      <div className="d-flex" style={{ marginTop: collapsedCourseNavOpen ? '150px' : '0'}}>
         <div className="d-none d-md-block">
           <CourseNavigation />
         </div>
-        <div className="ms-4 flex-grow-1 me-5">
+        <div className="ms-4 flex-grow-1 me-4">
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />

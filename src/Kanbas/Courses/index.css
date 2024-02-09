@@ -28,3 +28,18 @@
 .wd-breadcrumb-item.first {
   color: red;
 }
+
+.wd-course-slide-nav {
+  position: fixed;
+  top: 70px;
+  z-index: -1;
+  height:500px;
+  width: 100vw;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+.wd-course-slide-closed {
+  transform: translateY(-200%);
+}
