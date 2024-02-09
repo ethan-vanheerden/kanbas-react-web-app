@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wd-kanbas-nav-offset {
+  position: relative;
+  left: 80px;
+}
+
+.wd-fg-navy {
+  color: navy;
+}
+
+.wd-fg-palevioletred {
+  color: palevioletred;
+}
+
+.wd-fg-green {
+  color: green;
+}
+
+.wd-fg-brown {
+  color: brown;
+}
+
+.wd-fg-red {
+  color: red;
+}
+
+.wd-fg-darkgoldenrod {
+  color: darkgoldenrod;
+}
+
+.wd-fg-coral {
+  color: coral;
+}
+
+.wd-bold {
+  font-weight: bold;
+}
