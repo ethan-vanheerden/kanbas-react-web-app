@@ -1,4 +1,30 @@
 .wd-course-title {
   display: flex;
-  align-items: center; /* Align items vertically in the center */;
+  align-items: center;
+  position: relative;
+  top: 8px;
+}
+
+.breadcrumb {
+  position: relative;
+  top: 8px;
+}
+
+.breadcrumb-item:last-child::after {
+  content: "";
+  margin-left: 0;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: "\203A";
+  color: gray; 
+}
+
+.wd-breadcrumb-item {
+  color: black;
+  text-decoration: none;
+}
+
+.wd-breadcrumb-item.first {
+  color: red;
 }
