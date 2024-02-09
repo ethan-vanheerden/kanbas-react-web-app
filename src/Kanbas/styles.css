@@ -9,7 +9,13 @@ body * {
 
 .wd-kanbas-nav-offset {
   position: relative;
-  left: 80px;
+  /* left: 80px; */
+  /* width: calc(100vw - 80px); */
+  width: 80px;
+}
+
+.wd-kanbas-content {
+  width: 100%;
 }
 
 .wd-fg-navy {
