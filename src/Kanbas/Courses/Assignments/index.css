@@ -42,4 +42,10 @@
 .wd-assignment-subtitle {
   color: gray;
   font-size: small;
+  margin-left: 55px;
+}
+
+.wd-assignment-block-icon {
+  position: relative;
+  top: 6px;
 }

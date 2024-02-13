@@ -4,6 +4,7 @@ import {
   FaPlusCircle,
   FaPlus,
 } from 'react-icons/fa'
+import { MdOutlineAssignment } from 'react-icons/md'
 import { Link, useParams } from 'react-router-dom'
 import { assignments } from '../../Database'
 import './index.css'
@@ -53,7 +54,9 @@ function Assignments() {
           <ul className="list-group">
             {assignmentList.map((assignment) => (
               <li className="list-group-item">
-                <FaEllipsisV className="me-2" />
+                <FaEllipsisV className="wd-assignment-block-icon me-2" />
+                <MdOutlineAssignment className="wd-assignment-block-icon me-3 text-success" />
+
                 <Link
                   className="wd-assignment"
                   to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
@@ -64,7 +67,7 @@ function Assignments() {
                   <FaCheckCircle className="text-success" />
                   <FaEllipsisV className="ms-2" />
                 </span>
-                <div className="wd-assignment-subtitle ms-4">
+                <div className="wd-assignment-subtitle">
                   <a className="wd-multiple-modules" href="javascript:void(0)">
                     Multiple Modules
                   </a>
