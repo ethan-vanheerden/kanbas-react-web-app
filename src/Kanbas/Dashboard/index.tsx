@@ -1,13 +1,48 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { courses } from '../Database'
 import { FaBook } from 'react-icons/fa'
+import { HiMiniBars3 } from 'react-icons/hi2'
 import './index.css'
 import '../styles.css'
 import CollapsedKanbasNavigation from '../Navigation/Collapsed'
+import useCollapseNav from '../hooks/useCollapseNav'
 
 function Dashboard() {
+  const [collapsedKanbasNavOpen, setCollapsedKanbasNavOpen] = useState(false)
+  const handleToggleCollapsedKanbasNav = () => {
+    setCollapsedKanbasNavOpen((prevState) => !prevState)
+  }
+
+  useCollapseNav(() => {
+    setCollapsedKanbasNavOpen(false)
+  })
+
   return (
     <div>
+      <div
+        className={`wd-kanbas-slide-nav ${
+          collapsedKanbasNavOpen ? '' : 'wd-kanbas-slide-closed'
+        }`}
+      >
+        <CollapsedKanbasNavigation
+          closeAction={handleToggleCollapsedKanbasNav}
+        />
+      </div>
+      <div className="d-md-none">
+        <div className="wd-collapsed-navbar">
+          <button
+            className="icon-button mb-4"
+            onClick={handleToggleCollapsedKanbasNav}
+          >
+            <HiMiniBars3 />
+          </button>
+
+          <div className="wd-nav-title text-center pt-2">Dashboard</div>
+
+          <div></div>
+        </div>
+      </div>
       <div className="p-4">
         <h1>Dashboard</h1> <hr />
         <h2>Published Courses (12)</h2> <hr />

@@ -18,6 +18,7 @@ import { useState, useEffect } from 'react'
 import CollapsedKanbasNavigation from '../Navigation/Collapsed'
 import CollapsedCourseNavigation from './Navigation/Collapsed'
 import Assignments from './Assignments'
+import useCollapseNav from '../hooks/useCollapseNav'
 
 function Courses() {
   const { courseId } = useParams()
@@ -41,23 +42,12 @@ function Courses() {
     setCollapsedCourseNavOpen((prevState) => !prevState)
   }
 
-  const medWidth = 768 // Boostrap docs
-  const [showCollapsed, _] = useState(window.innerWidth < medWidth)
-
   // This ensures we close the collapsible navbars if they are
   // open when we increase the screen size
-  useEffect(() => {
-    window.addEventListener(
-      'resize',
-      () => {
-        if (window.innerWidth > 768) {
-          setCollapsedKanbasNavOpen(false)
-          setCollapsedCourseNavOpen(false)
-        }
-      },
-      false,
-    )
-  }, [showCollapsed])
+  useCollapseNav(() => {
+    setCollapsedKanbasNavOpen(false)
+    setCollapsedCourseNavOpen(false)
+  })
 
   const course = courses.find((course) => course._id === courseId)
   return (

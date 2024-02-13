@@ -11,8 +11,8 @@ type CollapsedKanbasNavigationProps = {
 function CollapsedKanbasNavigation({
   closeAction,
 }: CollapsedKanbasNavigationProps) {
-  const location = useLocation();
-  const currentPath = location.pathname;
+  const location = useLocation()
+  const currentPath = location.pathname
 
   return (
     <div className="wd-collapse-padding">
@@ -29,7 +29,9 @@ function CollapsedKanbasNavigation({
             <Link
               to={
                 link.label == 'Courses'
-                  ? currentPath
+                  ? currentPath.includes('Dashboard')
+                    ? `/Kanbas/${link.label}/RS101`
+                    : currentPath
                   : `/Kanbas/${link.label}`
               }
               onClick={closeAction}
