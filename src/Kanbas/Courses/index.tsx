@@ -8,21 +8,26 @@ import {
   useLocation,
 } from 'react-router-dom'
 import { HiMiniBars3 } from 'react-icons/hi2'
-import { FaChevronDown } from 'react-icons/fa'
+import { FaChevronDown, FaTimes, FaGlasses } from 'react-icons/fa'
 import CourseNavigation, { courseLinks } from './Navigation'
 import '../styles.css'
 import './index.css'
 import Modules from './Modules'
 import Home from './Home'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import CollapsedKanbasNavigation from '../Navigation/Collapsed'
+import CollapsedCourseNavigation from './Navigation/Collapsed'
+import Assignments from './Assignments'
 
 function Courses() {
   const { courseId } = useParams()
   const location = useLocation()
   const path = decodeURI(location.pathname).split('/')
   const getBreadcrumb = () => {
-    const breadcrumbTexts = courseLinks.filter((link) => path.includes(link))
-    return breadcrumbTexts.length > 0 ? breadcrumbTexts[0] : ''
+    const breadcrumbTexts = courseLinks.filter((link) =>
+      path.includes(link.label),
+    )
+    return breadcrumbTexts.length > 0 ? breadcrumbTexts[0].label : ''
   }
   const breadcrumb = getBreadcrumb()
 
@@ -36,6 +41,24 @@ function Courses() {
     setCollapsedCourseNavOpen((prevState) => !prevState)
   }
 
+  const medWidth = 768 // Boostrap docs
+  const [showCollapsed, _] = useState(window.innerWidth < medWidth)
+
+  // This ensures we close the collapsible navbars if they are
+  // open when we increase the screen size
+  useEffect(() => {
+    window.addEventListener(
+      'resize',
+      () => {
+        if (window.innerWidth > 768) {
+          setCollapsedKanbasNavOpen(false)
+          setCollapsedCourseNavOpen(false)
+        }
+      },
+      false,
+    )
+  }, [showCollapsed])
+
   const course = courses.find((course) => course._id === courseId)
   return (
     <div>
@@ -44,33 +67,42 @@ function Courses() {
           collapsedKanbasNavOpen ? '' : 'wd-kanbas-slide-closed'
         }`}
       >
-        HELLO
+        <CollapsedKanbasNavigation
+          closeAction={handleToggleCollapsedKanbasNav}
+        />
       </div>
 
       <div className="ms-4 d-none d-md-block">
-        <div className="wd-course-title wd-fg-red">
-          <HiMiniBars3 className="me-3" />
-          <ul className="breadcrumb">
-            <Link
-              className="breadcrumb-item wd-breadcrumb-item first"
-              to="Home"
-            >
-              {course?.number}
-            </Link>
-            <Link
-              className="breadcrumb-item wd-breadcrumb-item active"
-              to={breadcrumb}
-            >
-              {breadcrumb}
-            </Link>
-          </ul>
+        <div className="wd-course-header-flex">
+          <div className="wd-course-title wd-fg-red">
+            <HiMiniBars3 className="me-3" />
+            <ul className="breadcrumb">
+              <Link
+                className="breadcrumb-item wd-breadcrumb-item first"
+                to="Home"
+              >
+                {course?.number}
+              </Link>
+              <Link
+                className="breadcrumb-item wd-breadcrumb-item active"
+                to={breadcrumb}
+              >
+                {breadcrumb}
+              </Link>
+            </ul>
+          </div>
+          <div></div>
+          <button className="wd-course-button mt-3 me-5">
+            <FaGlasses className="me-2 mb-1" />
+            Student View
+          </button>
         </div>
         <hr />
       </div>
       <div className="d-md-none">
         <div className="wd-collapsed-navbar">
           <button
-            className="icon-button"
+            className="icon-button mb-4"
             onClick={handleToggleCollapsedKanbasNav}
           >
             <HiMiniBars3 />
@@ -82,21 +114,26 @@ function Courses() {
             {breadcrumb}
           </div>
           <button
-            className="icon-button"
+            className="icon-button mb-4"
             onClick={handleToggleCollapsedCourseNav}
           >
-            <FaChevronDown />
+            {collapsedCourseNavOpen ? <FaTimes /> : <FaChevronDown />}
           </button>
         </div>
       </div>
       <div
         className={`wd-course-slide-nav ${
           collapsedCourseNavOpen ? '' : 'wd-course-slide-closed'
-        }`}
+        } d-md-none`}
       >
-        Collapsed Course Nav
+        <CollapsedCourseNavigation
+          closeAction={handleToggleCollapsedCourseNav}
+        />
       </div>
-      <div className="d-flex" style={{ marginTop: collapsedCourseNavOpen ? '150px' : '0'}}>
+      <div
+        className="d-flex"
+        style={{ marginTop: collapsedCourseNavOpen ? '550px' : '0' }}
+      >
         <div className="d-none d-md-block">
           <CourseNavigation />
         </div>
@@ -107,7 +144,7 @@ function Courses() {
             <Route path="Modules" element={<Modules />} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />
             <Route path="Zoom Meetings" element={<h1>Zoom Meetings</h1>} />
-            <Route path="Assignments" element={<h1>Assignments</h1>} />
+            <Route path="Assignments" element={<Assignments />} />
             <Route
               path="Assignments/:assignmentId"
               element={<h1>Assignment Editor</h1>}

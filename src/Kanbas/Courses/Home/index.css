@@ -1,0 +1,146 @@
+.wd-publish-buttons {
+  display: flex;
+}
+
+.wd-course-button-publish,
+.wd-course-button-unpublish {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  height: 30px;
+  border-style: none;
+  margin-right: 4px;
+  font-size: small;
+  width: 100%;
+}
+
+.wd-course-button-unpublish,
+.wd-course-button-publish {
+  display: flex-inline;
+}
+
+.wd-course-button-unpublish i,
+.wd-course-button-publish i {
+  font-size: small;
+  margin-right: 5px;
+}
+
+.wd-course-button-publish {
+  background-color: lightgreen;
+  color: white;
+}
+
+.wd-course-status {
+  margin-left: 10px;
+  position: relative;
+  bottom: 4px;
+}
+
+.wd-course-status>h5 {
+  font-weight: bold;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-course-status>h5>div {
+  font-size: small;
+  position: relative;
+  top: 4px;
+}
+
+.wd-course-status>h5>div>a {
+  text-decoration: none;
+  color: red;
+}
+
+.wd-course-status>h5>div>a>i {
+  color: gray;
+}
+
+.wd-course-status>div {
+  margin-top: 5px;
+}
+
+.wd-course-status>div>button {
+  margin: 1px;
+  width: 220px;
+  height: 32px;
+  text-align: left;
+}
+
+.wd-course-status>div>button>i {
+  margin-right: 1px;
+  font-size: small;
+}
+
+.wd-course-status>hr {
+  margin-top: 0px;
+}
+
+.wd-todo {
+  display: flex;
+  justify-content: space-between;
+  color: red;
+}
+
+.wd-todo a {
+  text-decoration: none;
+}
+
+.wd-todo h6 {
+  color: red;
+  font-weight: bold;
+}
+
+.wd-info-icon svg {
+  color: red;
+  position: relative;
+  bottom: 4px;
+  margin-right: 2px;
+}
+
+.wd-todo-subtitle {
+  color: gray;
+  font-size: smaller;
+  margin-top: 0px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 15px;
+}
+
+.wd-coming-up {
+  position: relative;
+  right: 20px;
+}
+
+.wd-coming-up ul {
+  list-style-type: none;
+}
+
+.wd-coming-up ul>li>a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.wd-coming-up ul>li>a svg {
+  color: gray;
+  margin-right: 8px;
+}
+
+.wd-coming-up ul>li>a>div {
+  color: gray;
+  font-size: small;
+  margin-left: 30px;
+  font-weight: normal;
+}
+
+.wd-times {
+  margin-left: auto;
+  position: relative;
+  bottom: 4px;
+}

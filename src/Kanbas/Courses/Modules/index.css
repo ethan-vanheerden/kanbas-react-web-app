@@ -56,9 +56,7 @@
 }
 
 .wd-course-button,
-.wd-course-button-red,
-.wd-course-button-publish,
-.wd-course-button-unpublish {
+.wd-course-button-red {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -79,23 +77,6 @@
   color: white;
 }
 
-.wd-course-button-unpublish,
-.wd-course-button-publish {
-  display: flex-inline;
-  width: 110px;
-}
-
-.wd-course-button-unpublish i,
-.wd-course-button-publish i {
-  font-size: small;
-  margin-right: 5px;
-}
-
-.wd-course-button-publish {
-  background-color: lightgreen;
-  color: white;
-}
-
 .wd-course-button-red i {
   background-color: red;
   color: white;
@@ -113,107 +94,6 @@
   background-color: rgb(233, 233, 233);
   border-style: none;
   margin-right: 4px;
-}
-
-.wd-course-status {
-  margin-left: 10px;
-  margin-top: 8px;
-}
-
-.wd-course-status>h5 {
-  font-weight: bold;
-  margin-top: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.wd-course-status>h5>div {
-  font-size: small;
-  position: relative;
-  top: 4px;
-}
-
-.wd-course-status>h5>div>a {
-  text-decoration: none;
-  color: red;
-}
-
-.wd-course-status>h5>div>a>i {
-  color: gray;
-}
-
-.wd-course-status>div {
-  margin-top: 5px;
-}
-
-.wd-course-status>div>button {
-  margin: 1px;
-  width: 220px;
-  height: 32px;
-  text-align: left;
-}
-
-.wd-course-status>div>button>i {
-  margin-right: 1px;
-  font-size: small;
-}
-
-.wd-course-status>hr {
-  margin-top: 0px;
-}
-
-.wd-todo {
-  display: flex;
-  justify-content: space-between;
-}
-
-.wd-todo a {
-  text-decoration: none;
-}
-
-.wd-todo h6 {
-  color: red;
-  font-weight: bold;
-}
-
-.wd-todo i {
-  color: red;
-}
-
-.wd-todo-subtitle {
-  color: gray;
-  text-indent: 40px;
-  font-size: smaller;
-  margin-top: 0px;
-  position: relative;
-  bottom: 10px;
-}
-
-.wd-coming-up {
-  position: relative;
-  right: 20px;
-}
-
-.wd-coming-up ul {
-  list-style-type: none;
-}
-
-.wd-coming-up ul>li>a {
-  text-decoration: none;
-  color: red;
-  font-weight: bold;
-}
-
-.wd-coming-up ul>li>a i {
-  color: gray;
-  margin-right: 8px;
-}
-
-.wd-coming-up ul>li>a>div {
-  color: gray;
-  font-size: small;
-  margin-left: 30px;
-  font-weight: normal;
 }
 
 * .wd-collpased-navbar {
@@ -269,7 +149,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
 }
 
 .wd-collapsed-kanbas-nav>div {

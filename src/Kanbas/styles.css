@@ -79,7 +79,7 @@ body * {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: white;
   transition: transform 0.3s ease-in-out;
   transform: translateX(0);
   z-index: 1;
@@ -87,4 +87,10 @@ body * {
 
 .wd-kanbas-slide-closed {
   transform: translateX(-100%);
+}
+
+.wd-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
 }

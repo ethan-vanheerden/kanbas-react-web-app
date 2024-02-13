@@ -1,0 +1,25 @@
+.wd-collapse-padding {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+}
+
+.wd-kanbas-nav-items {
+  list-style: none;
+  font-size: larger;
+}
+
+.wd-kanbas-nav-items a {
+  color: red;
+  text-decoration: none;
+}
+
+.wd-kanbas-collapsed-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-x-button {
+  font-size: larger;
+  color: grey;
+}

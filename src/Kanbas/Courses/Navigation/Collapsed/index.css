@@ -1,0 +1,25 @@
+.wd-collapsed-course-nav {
+  background-color: white;
+  box-shadow: 0px 5px 5px gray;
+  padding-top: 8px;
+  list-style: none;
+}
+
+.wd-collapsed-course-nav a {
+  text-decoration: none;
+  color: red;
+}
+
+.wd-collapsed-course-nav li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.wd-collapsed-course-nav li svg {
+  margin-right: 8px;
+}
+
+.wd-collapsed-course-nav a:hover {
+  text-decoration: underline;
+}
