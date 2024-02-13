@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { courses } from '../Database'
 import { FaBook } from 'react-icons/fa'
 import { HiMiniBars3 } from 'react-icons/hi2'

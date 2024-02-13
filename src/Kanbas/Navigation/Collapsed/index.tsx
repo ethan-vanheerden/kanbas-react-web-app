@@ -28,7 +28,7 @@ function CollapsedKanbasNavigation({
           <li key={index}>
             <Link
               to={
-                link.label == 'Courses'
+                link.label === 'Courses'
                   ? currentPath.includes('Dashboard')
                     ? `/Kanbas/${link.label}/RS101`
                     : currentPath

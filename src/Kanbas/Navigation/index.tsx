@@ -46,7 +46,7 @@ function KanbasNavigation() {
             to={
               // If just the Courses is clicked (not from the Dashboard), we
               // will just show the user's first course
-              link.label == 'Courses'
+              link.label === 'Courses'
                 ? `/Kanbas/${link.label}/RS101`
                 : `/Kanbas/${link.label}`
             }

@@ -5,7 +5,7 @@ import Highlight from "./Highlight";
 import JavaScript from "./JavaScript";
 import Add from "./Add";
 import PathParameters from "./routing/PathParameters";
-import TodoList from "./todo/TodoList";
+import TodoList from "./todos/TodoList";
 
 function Assignment3() {
   return (
@@ -15,8 +15,8 @@ function Assignment3() {
       <ConditionalOutput />
       <Styles />
       <Classes />
-      <JavaScript />
       <PathParameters />
+      <JavaScript />
       <Highlight>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam
         vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus sequi maiores, provident voluptates.
