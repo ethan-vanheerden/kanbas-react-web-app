@@ -1,5 +1,5 @@
 import { kanbasLinks } from '../index'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './index.css'
 import '../../styles.css'
 import { FaTimes } from 'react-icons/fa'
@@ -11,6 +11,9 @@ type CollapsedKanbasNavigationProps = {
 function CollapsedKanbasNavigation({
   closeAction,
 }: CollapsedKanbasNavigationProps) {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <div className="wd-collapse-padding">
       <div className="d-flex justify-content-between align-items-center ps-2 pe-2">
@@ -23,7 +26,14 @@ function CollapsedKanbasNavigation({
       <ul className="wd-kanbas-nav-items">
         {kanbasLinks.map((link, index) => (
           <li key={index}>
-            <Link to={`/Kanbas/${link.label}`}>
+            <Link
+              to={
+                link.label == 'Courses'
+                  ? currentPath
+                  : `/Kanbas/${link.label}`
+              }
+              onClick={closeAction}
+            >
               <div className="d-flex mb-3">
                 <div className="me-4">{link.icon}</div>
                 {link.label}
