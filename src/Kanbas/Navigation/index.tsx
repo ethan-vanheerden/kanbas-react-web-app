@@ -26,6 +26,12 @@ export const kanbasLinks = [
 
 function KanbasNavigation() {
   const { pathname } = useLocation()
+
+  const getCourseId = () => {
+    const pathSegments = pathname.split('/');
+    return pathSegments[3]
+  }
+
   return (
     <ul className="wd-kanbas-navigation">
       <li>
@@ -44,10 +50,10 @@ function KanbasNavigation() {
         >
           <Link
             to={
-              // If just the Courses is clicked (not from the Dashboard), we
+              // If just the Courses is clicked (not from the Dashboard card), we
               // will just show the user's first course
-              link.label === 'Courses'
-                ? `/Kanbas/${link.label}/RS101`
+              link.label === 'Courses' ?
+                (pathname.includes("Courses") ? `/Kanbas/${link.label}/${getCourseId()}/Home` : `/Kanbas/${link.label}/RS101`)
                 : `/Kanbas/${link.label}`
             }
           >
