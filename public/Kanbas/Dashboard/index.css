@@ -1,0 +1,23 @@
+.wd-kanbas-course {
+  width: 270px;
+}
+
+.wd-kanbas-course .card {
+  height: 270px;
+}
+
+.wd-kanbas-course .card-body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
+
+.wd-kanbas-course a {
+  text-decoration: none;
+}
+
+.wd-kanbas-course i {
+  color: rgb(187, 187, 187);
+  font-size: x-large;
+}

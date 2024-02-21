@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Edit Assignment</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="stylesheet" href="../../../Navigation/index.css" />
+  <link rel="stylesheet" href="../../../../libs/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../../Navigation/index.css" />
+</head>
+
+<body>
+  <table style="border-collapse: collapse;">
+    <tbody>
+      <tr valign="top">
+        <td>
+          <ul class="wd-kanbas-navigation">
+            <li>
+              <a href="http://northeastern.edu">
+                <img class="wd-nu-image" src="../../../../images/nu_logo.jpg" />
+              </a>
+            </li>
+            <li>
+              <a href="../../../Account/Profile/screen.html">
+                <i class="fa fa-user wd-profile"></i>Account</a>
+            </li>
+            <li>
+              <a href="../../../Dashboard/screen.html">
+                <i class="fa fa-tachometer"></i>Dashboard</a>
+            </li>
+            <li class="wd-active"><a href="../../Home/screen.html">
+                <i class="fa fa-book"></i>Courses</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-calendar"></i>Calendar</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-inbox"></i><br />Inbox</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-clock-o"></i>History</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-desktop"></i>Studio</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-arrow-circle-right"></i>Commons</a>
+            </li>
+            <li><a href="#">
+                <i class="fa fa-question-circle-o"></i><br />Help</a>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul class="wd-navigation" style="margin-left: 115px">
+            <li>
+              <a href="../../Home/screen.html">Home</a>
+            </li>
+            <li>
+              <a href="#">Modules</a>
+            </li>
+            <li>
+              <a href="https://piazza.com">Piazza</a>
+            </li>
+            <li>
+              <a href="#">Zoom Meetings</a>
+            </li>
+            <li class="wd-active">
+              <a href="../screen.html">Assignments</a>
+            </li>
+            <li>
+              <a href="#">Quizzes</a>
+            </li>
+            <li>
+              <a href="../../Grades/screen.html">Grades</a>
+            </li>
+            <li>
+              <a href="#">People</a>
+            </li>
+            <li>
+              <a href="#">Panopto Video</a>
+            </li>
+            <li>
+              <a href="#">Discussions</a>
+            </li>
+            <li>
+              <a href="#">Announcements</a>
+            </li>
+            <li>
+              <a href="#">Pages</a>
+            </li>
+            <li>
+              <a href="#">Files</a>
+            </li>
+            <li>
+              <a href="#">Rubrics</a>
+            </li>
+            <li>
+              <a href="#">Outcomes</a>
+            </li>
+            <li>
+              <a href="#">Collaborations</a>
+            </li>
+            <li>
+              <a href="#">Syllabus</a>
+            </li>
+            <li>
+              <a href="#">Settings</a>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <select id="edit-assignment-select">
+            <option selected value="SPEED_GRADER">Speed Grader</option>
+          </select>
+          <hr>
+          <h3>Assignment Name</h3>
+          <form>
+            <input type="text" value="Assignment Name"><br /><br />
+            <textarea>This is the assignment description.</textarea><br /><br />
+
+            <label for="points-entry">Points</label></br>
+            <input type="text" value="100" name="points" id="points-entry" /><br /><br />
+
+            <label for="assignment-group">Assignment Group</label></br>
+            <select id="assignment-group">
+              <option selected value="ASSIGNMENTS">ASSIGNMENTS</option>
+            </select><br /><br />
+
+            <label for="display-grade">Display Grade as</label></br>
+            <select id="display-grade">
+              <option selected value="PERCENTAGE">Percentage</option>
+            </select><br /><br />
+
+            <label for="submission-type">Submission Type</label></br>
+            <select id="submission-type">
+              <option selected value="ONLINE">Online</option>
+            </select><br /><br />
+
+            <label>Online Entry Options</label><br />
+            <input type="checkbox" value="TEXT" name="check-entries" id="chkbox-text-entry" />
+            <label for="chkbox-text-entry">Text Entry</label><br />
+            <input type="checkbox" value="URL" name="check-entries" id="chkbox-web-url" />
+            <label for="chkbox-web-url">Website URL</label><br />
+            <input type="checkbox" value="RECORDINGS" name="check-entries" id="chkbox-recordings" />
+            <label for="chkbox-recordings">Media Recordings</label><br />
+            <input type="checkbox" value="ANNOTATION" name="check-entries" id="chkbox-annotation" />
+            <label for="chkbox-annotation">Student Annotation</label><br />
+            <input type="checkbox" value="FILE" name="check-entries" id="chkbox-file" />
+            <label for="chkbox-file">File Uploads</label><br /><br />
+
+            <label>Assign</label><br />
+            <label for="assign-to-entry">Assign to</label></br>
+            <input type="text" value="Everyone" name="assign" id="assign-to-entry" /><br /><br />
+
+            <label for="due-entry">Due</label></br>
+            <input type="date" id="due-entry" value="2024-01-01" /><br /><br />
+
+            <label for="available-entry">Available from</label></br>
+            <input type="date" id="available-entry" value="2024-01-01" /><br /><br />
+
+            <label for="until-entry">Until</label></br>
+            <input type="date" id="until-entry" value="2024-01-01" /><br /><br />
+
+            <a href="../screen.html"><button type="button">Cancel</button></a>
+            <a href="../screen.html"><button type="button">Save</button></a>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
