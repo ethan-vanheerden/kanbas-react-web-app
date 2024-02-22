@@ -1,0 +1,10 @@
+.wd-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wd-normal-flex {
+  display: flex;
+  align-items: center;
+}
