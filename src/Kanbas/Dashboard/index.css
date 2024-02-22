@@ -29,3 +29,14 @@
   position: relative;
   bottom: 8px;
 }
+
+.wd-course-buttons-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wd-edit-delete-buttons {
+  position: relative;
+  bottom: 6px;
+}
