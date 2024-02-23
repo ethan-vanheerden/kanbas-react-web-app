@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import db from '../Database'
 import { FaBook } from 'react-icons/fa'
 import { HiMiniBars3 } from 'react-icons/hi2'
 import './index.css'
@@ -8,7 +7,7 @@ import '../styles.css'
 import CollapsedKanbasNavigation from '../Navigation/Collapsed'
 import useCollapseNav from '../hooks/useCollapseNav'
 
-type Course = {
+export type Course = {
   _id: string;
   name: string;
   number: string;
@@ -18,44 +17,15 @@ type Course = {
   color: string;
 };
 
-function Dashboard({ courses, course, setCourse, addNewCourse,
-  deleteCourse, updateCourse
-}:
-  {
-    counter: number;
-    setCounter: (counter: number) => void;
-  }) {
+function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, updateCourse }: {
+  courses: Course[],
+  course: Course,
+  setCourse: (course: Course) => void,
+  addNewCourse: () => void,
+  deleteCourse: (courseId: string) => void,
+  updateCourse: () => void
+}) {
   const [collapsedKanbasNavOpen, setCollapsedKanbasNavOpen] = useState(false)
-  const [courses, setCourses] = useState(db.courses);
-  const [course, setCourse] = useState({
-    _id: "0", name: "New Course", number: "New Number",
-    startDate: "2023-09-10", endDate: "2023-12-15",
-    image: "../../images/reactjs.jpg", color: "blue"
-  });
-
-  const addNewCourse = () => {
-    const newCourse = {
-      ...course,
-      _id: new Date().getTime().toString()
-    };
-    setCourses([...courses, { ...course, ...newCourse }]);
-  };
-
-  const deleteCourse = (courseId: string) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
-  };
-
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
 
   const handleToggleCollapsedKanbasNav = () => {
     setCollapsedKanbasNavOpen((prevState) => !prevState)

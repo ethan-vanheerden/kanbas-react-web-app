@@ -1,4 +1,3 @@
-import { courses } from '../../Kanbas/Database'
 import {
   Navigate,
   Route,
@@ -19,8 +18,9 @@ import CollapsedKanbasNavigation from '../Navigation/Collapsed'
 import CollapsedCourseNavigation from './Navigation/Collapsed'
 import Assignments from './Assignments'
 import useCollapseNav from '../hooks/useCollapseNav'
+import { Course } from '../Dashboard'
 
-function Courses() {
+function Courses({ courses }: { courses: Course[] }) {
   const { courseId } = useParams()
   const location = useLocation()
   const path = decodeURI(location.pathname).split('/')
@@ -53,9 +53,8 @@ function Courses() {
   return (
     <div>
       <div
-        className={`wd-kanbas-slide-nav ${
-          collapsedKanbasNavOpen ? '' : 'wd-kanbas-slide-closed'
-        }`}
+        className={`wd-kanbas-slide-nav ${collapsedKanbasNavOpen ? '' : 'wd-kanbas-slide-closed'
+          }`}
       >
         <CollapsedKanbasNavigation
           closeAction={handleToggleCollapsedKanbasNav}
@@ -112,9 +111,8 @@ function Courses() {
         </div>
       </div>
       <div
-        className={`wd-course-slide-nav ${
-          collapsedCourseNavOpen ? '' : 'wd-course-slide-closed'
-        } d-md-none`}
+        className={`wd-course-slide-nav ${collapsedCourseNavOpen ? '' : 'wd-course-slide-closed'
+          } d-md-none`}
       >
         <CollapsedCourseNavigation
           closeAction={handleToggleCollapsedCourseNav}

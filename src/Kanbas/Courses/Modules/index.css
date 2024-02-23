@@ -83,6 +83,11 @@
   font-size: small;
 }
 
+.wd-module-description {
+  font-size: small;
+  color: gray;
+}
+
 .wd-course-select {
   padding-left: 10px;
   padding-right: 10px;
@@ -241,4 +246,27 @@
 .wd-title-hr {
   margin: 10px;
   border-top: 1px solid black;
+}
+
+.wd-module-title-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.wd-module-title-ellipsis {
+  position: relative;
+  top: 4px;
+}
+
+.wd-module-title-buttons {
+  display: flex;
+  align-items: center;
+  width: 190px;
+  flex-shrink: 0;
+}
+
+.wd-module-title-button-offset {
+  position: relative;
+  bottom: 5px;
 }
