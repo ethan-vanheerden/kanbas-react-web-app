@@ -8,13 +8,13 @@ import {
 } from 'react-icons/fa'
 import { MdOutlineAssignment } from 'react-icons/md'
 import { Link, useParams } from 'react-router-dom'
-import { assignments } from '../../Database'
+import assignments from '../../Database/assignments'
 import './index.css'
 
 function Assignments() {
   const { courseId } = useParams()
   const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId,
+    (assignment:any) => assignment.course === courseId,
   )
   return (
     <>
@@ -54,7 +54,7 @@ function Assignments() {
             </div>
           </div>
           <ul className="list-group">
-            {assignmentList.map((assignment) => (
+            {assignmentList.map((assignment:any) => (
               <li className="list-group-item">
                 <FaEllipsisV className="wd-assignment-block-icon me-2" />
                 <MdOutlineAssignment className="wd-assignment-block-icon me-3 text-success" />

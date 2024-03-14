@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './index.css'
 import {
   FaEllipsisV,
@@ -12,15 +12,42 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
 import { KanbasState } from '../../store'
+import * as client from "./client";
 
 function ModuleList() {
   const { courseId } = useParams()
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    client.findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+      );
+  }, [courseId, dispatch]);
+
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
 
   const moduleList = useSelector((state: KanbasState) => state.modulesReducer.modules);
   const module = useSelector((state: KanbasState) => state.modulesReducer.module);
-  const dispatch = useDispatch();
 
   const modulesInCourse = moduleList.filter((module) => module.course === courseId)
   const [selectedModule, setSelectedModule] = useState(modulesInCourse[0])
@@ -63,13 +90,13 @@ function ModuleList() {
           </div>
           <button
             className="wd-course-button ms-2 me-1"
-            onClick={() => dispatch(updateModule(module))}>
+            onClick={handleUpdateModule}>
             Update
           </button>
 
           <button
             className="wd-course-button-red"
-            onClick={() => dispatch(addModule({ ...module, course: courseId, _id: new Date().getTime().toString() }))}
+            onClick={handleAddModule}
           >
             Add
           </button>
@@ -80,7 +107,7 @@ function ModuleList() {
         {moduleList
           .filter((module) => module.course === courseId)
           .map((module) => (
-            module._id && (
+            module && (
               <li
                 className="list-group-item"
                 onClick={() => setSelectedModule(module)}
@@ -105,7 +132,11 @@ function ModuleList() {
 
                     <button
                       className="wd-course-button-red"
-                      onClick={() => dispatch(deleteModule(module._id))}>
+                      onClick={() => {
+                        if (module) {
+                          handleDeleteModule(module._id)
+                        }
+                      }}>
                       Delete
                     </button>
                     <div className="wd-module-title-button-offset">
@@ -115,7 +146,7 @@ function ModuleList() {
                     </div>
                   </div>
                 </div>
-                {selectedModule._id === module._id && (
+                {selectedModule && module && selectedModule._id === module._id && (
                   <ul className="list-group">
                     {module.lessons?.map((lesson: any) => (
                       <li className="list-group-item">
