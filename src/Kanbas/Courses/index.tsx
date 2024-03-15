@@ -19,10 +19,11 @@ import CollapsedKanbasNavigation from '../Navigation/Collapsed'
 import CollapsedCourseNavigation from './Navigation/Collapsed'
 import Assignments from './Assignments'
 import useCollapseNav from '../hooks/useCollapseNav'
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 function Courses() {
   const { courseId } = useParams()
-  const COURSES_API = "http://localhost:4000/api/courses";
+  const COURSES_API = `${API_BASE}/api/courses`;
   const [course, setCourse] = useState<any>({ _id: "" });
   const findCourseById = async (courseId?: string) => {
     const response = await axios.get(
