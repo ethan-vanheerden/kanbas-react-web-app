@@ -33,6 +33,7 @@ function Courses() {
   };
   useEffect(() => {
     findCourseById(courseId);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId]);
 
 
