@@ -1,5 +1,5 @@
 import axios from "axios";
-export const BASE_API = process.env.REACT_APP_BASE_API_URL;
+export const BASE_API = process.env.REACT_APP_API_BASE;
 export const USERS_API = `${BASE_API}/api/users`;
 export interface User {
   _id: string;
@@ -30,6 +30,7 @@ export const findAllUsers = async () => {
 };
 
 export const createUser = async (user: any) => {
+  user._id = Date.now().toString();
   const response = await axios.post(`${USERS_API}`, user);
   return response.data;
 };

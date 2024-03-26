@@ -11,21 +11,13 @@ export default function UserTable() {
   });
 
   const createUser = async () => {
-    try {
-      const newUser = await client.createUser(user);
-      setUsers([newUser, ...users]);
-    } catch (err) {
-      console.log(err);
-    }
+    const newUser = await client.createUser(user);
+    setUsers([newUser, ...users]);
   };
 
   const deleteUser = async (user: User) => {
-    try {
-      await client.deleteUser(user);
-      setUsers(users.filter((u) => u._id !== user._id));
-    } catch (err) {
-      console.log(err);
-    }
+    await client.deleteUser(user);
+    setUsers(users.filter((u) => u._id !== user._id));
   };
 
 
@@ -49,21 +41,23 @@ export default function UserTable() {
           </tr>
           <tr>
             <td>
-              <input value={user.password} onChange={(e) =>
-                setUser({ ...user, password: e.target.value })} />
-              <input value={user.username} onChange={(e) =>
-                setUser({ ...user, username: e.target.value })} />
+              <div className="d-flex">
+                <input className="form-control" value={user.username} onChange={(e) =>
+                  setUser({ ...user, username: e.target.value })} />
+                <input className="form-control ms-1" type="password" value={user.password} onChange={(e) =>
+                  setUser({ ...user, password: e.target.value })} />
+              </div>
             </td>
             <td>
-              <input value={user.firstName} onChange={(e) =>
+              <input className="form-control" value={user.firstName} onChange={(e) =>
                 setUser({ ...user, firstName: e.target.value })} />
             </td>
             <td>
-              <input value={user.lastName} onChange={(e) =>
+              <input className="form-control" value={user.lastName} onChange={(e) =>
                 setUser({ ...user, lastName: e.target.value })} />
             </td>
             <td>
-              <select value={user.role} onChange={(e) =>
+              <select className="form-control" value={user.role} onChange={(e) =>
                 setUser({ ...user, role: e.target.value })}>
                 <option value="USER">User</option>
                 <option value="ADMIN">Admin</option>
@@ -72,7 +66,7 @@ export default function UserTable() {
               </select>
             </td>
             <td>
-              <BsPlusCircleFill className="btn btn-success" onClick={createUser} />
+              <BsPlusCircleFill color="green" size={30} className="pb-1" onClick={createUser} />
             </td>
           </tr>
         </thead>
@@ -82,6 +76,7 @@ export default function UserTable() {
               <td>{user.username}</td>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
+              <td>{user.role}</td>
               <td>
                 <button className="btn btn-danger" onClick={() => deleteUser(user)}>
                   <BsTrash3Fill />
